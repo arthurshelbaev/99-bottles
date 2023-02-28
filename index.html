@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link href="src/styles.scss" rel="stylesheet" />
+  </head>
+  <body style="background-color: black; color: white; margin: 0">
+    <script>
+      const main = document.createElement("main");
+
+      main.style.display = "flex";
+      main.style.justifyContent = "center";
+
+      const btls = document.createElement("div");
+      btls.style.border = "10px solid white";
+      btls.style.width = "max-content";
+      btls.style.margin = "30px 0";
+      btls.style.padding = "20px 30px";
+      (btls.style.fontFamily = "Gill Sans"), document.body.append(main);
+      main.append(btls);
+
+      function song() {
+        let bottles, bottles2;
+
+        for (let i = 99; i >= 0; i--) {
+          if (i >= 11 && i <= 19) (bottles = "бутылок"), (bottles2 = "бутылок");
+          else if (i % 10 === 5) (bottles = "бутылок"), (bottles2 = "бутылки");
+          else if (i % 10 === 4 || i % 10 === 3)
+            (bottles = "бутылки"), (bottles2 = "бутылки");
+          else if (i % 10 === 2) (bottles = "бутылки"), (bottles2 = "бутылка");
+          else if (i === 1) {
+            const string = document.createElement("div");
+            string.textContent = `${i} бутылка пива на стене, ${i} бутылка пива! Возьми одну, пусти по кругу. Нет бутылок пива на стене!`;
+            string.style.color = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+            btls.append(string);
+
+            return;
+          } else if (i % 10 === 1)
+            (bottles = "бутылка"), (bottles2 = "бутылок");
+          else (bottles = "бутылок"), (bottles2 = "бутылок");
+
+          const string = document.createElement("div");
+          string.style.display = "flex";
+          string.style.justifyContent = "center";
+          string.style.color = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+          string.style.margin = "10px";
+          string.textContent = `${i} ${bottles} пива на стене ${i} ${bottles} пива! Возьми одну, пусти по кругу, ${
+            i - 1
+          } ${bottles2} пива на стене!`;
+          btls.append(string);
+        }
+      }
+      song();
+    </script>
+  </body>
+</html>
