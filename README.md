@@ -1,4 +1,4 @@
-# 99-bottles
+## 99 bottles.
 
-## To run, copy and paste:
+### To run, copy and paste:
 `open index.js`
