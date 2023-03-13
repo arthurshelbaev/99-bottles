@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Document</title>
+    <link href="src/styles.scss" rel="stylesheet" />
   </head>
   <body style="background-color: black; color: white; margin: 0">
     <script>
@@ -16,7 +17,8 @@
       btls.style.width = "max-content";
       btls.style.margin = "30px 0";
       btls.style.padding = "20px 30px";
-      (btls.style.fontFamily = "Gill Sans"), document.body.append(main);
+      btls.style.fontFamily = "Gill Sans",
+      document.body.append(main);
       main.append(btls);
 
       function song() {
@@ -32,6 +34,7 @@
             const string = document.createElement("div");
             string.textContent = `${i} бутылка пива на стене, ${i} бутылка пива! Возьми одну, пусти по кругу. Нет бутылок пива на стене!`;
             string.style.color = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+            string.style.margin = "10px";
             btls.append(string);
 
             return;
